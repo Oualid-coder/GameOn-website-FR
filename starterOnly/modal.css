@@ -333,6 +333,42 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+#email-error{
+  color: #ff0000;
+  display: none;
+}
+
+#name-error{
+  color: #ff0000;
+  display: none;
+}
+
+#firstname-error{
+  color: #ff0000;
+  display: none;
+}
+
+#birthdate-error{
+  color: #ff0000;
+  display: none;
+}
+
+#checkbox-error{
+  color: #ff0000;
+  display: none;
+}
+
+#quantity-error{
+  color: #ff0000;
+  display: none;
+}
+
+#terms-error{
+  color: #ff0000;
+  display: none;
+}
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -516,6 +552,8 @@ footer {
     text-align: center;
   }
 }
+
+
 
 @keyframes modalopen {
   from {
