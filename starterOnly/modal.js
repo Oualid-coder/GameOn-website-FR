@@ -12,10 +12,12 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelectorAll(".close-btn")
+var btnFermer = document.getElementsByClassName("btn-fermer")
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 closeBtn.forEach((btn) => btn.addEventListener("click", closeModal));
+
 
 // launch modal form
 function launchModal() {
@@ -110,12 +112,12 @@ if(isNaN(quantity.value)  || quantity.value=="" || quantity.value<0){
 
 quantity.addEventListener("input", function() {
   if (quantity.value != "") {
-    // La valeur du range est valide, vous pouvez activer le bouton de soumission du formulaire
+    // La valeur du range est valide
     isValid=true
     quantityError.style.display="none"
 
   } else {
-    // La valeur du range est vide, désactiver le bouton de soumission du formulaire
+    // La valeur du range est vide
     isValid=false
     quantityError.style.display="block"
   }
@@ -169,18 +171,30 @@ if (!location1.checked && !location2.checked && !location3.checked && !location4
 
 
   const confirmationMessage = document.createElement('p');
-  confirmationMessage.textContent = 'Merci ! Votre soumission a été traitée avec succès.';
+  confirmationMessage.textContent = 'Merci ! Pour votre inscription.';
   confirmationMessage.style.display = 'none';
   confirmationMessage.style.color="green";
   form.appendChild(confirmationMessage);
 
   // Si les données sont valides, soumettre le formulaire
   if (isValid) {
-    confirmationMessage.style.display = 'block';
+    //formData.style.display='none'
+   
+    
+   
+    document.getElementsByClassName("btn-submit")[0].style.display="none";
+    var formDataList = document.getElementsByClassName("formData");
+    for (var i = 0; i < formDataList.length; i++) {
+      formDataList[i].style.display = "none";
+    }
+    document.getElementsByClassName("modal-body")[0].style.height = "500px";
+    btnFermer[0].style.display = "block";
 
-    setTimeout(() => {
-      form.submit();
-    }, 3000);      
+   
+
+    // setTimeout(() => {
+    //   form.submit();
+    // }, 3000);      
   }
 });
 

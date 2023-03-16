@@ -139,6 +139,10 @@ main {
 
 /* Modal form */
 
+.formData{
+ 
+}
+
 .button {
   background: #fe142f;
   margin-top: 0.5em;
@@ -429,6 +433,14 @@ input[data-error]::after {
 /* Hide the items when the select box is closed: */
 .select-hide {
   display: none;
+ 
+}
+
+.btn-fermer{
+  display: none;
+  position: relative;
+  top: 400 px;
+
 }
 
 .select-items div:hover,
