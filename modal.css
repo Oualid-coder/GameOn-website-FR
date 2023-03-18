@@ -90,7 +90,10 @@ img {
   }
 }
 
-
+.style-btn{
+  position: relative;
+  top: 400px ;
+}
 
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
@@ -438,8 +441,7 @@ input[data-error]::after {
 
 .btn-fermer{
   display: none;
-  position: relative;
-  top: 400 px;
+
 
 }
 

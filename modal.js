@@ -169,19 +169,10 @@ if (!location1.checked && !location2.checked && !location3.checked && !location4
    }
 
 
-
-  const confirmationMessage = document.createElement('p');
-  confirmationMessage.textContent = 'Merci ! Pour votre inscription.';
-  confirmationMessage.style.display = 'none';
-  confirmationMessage.style.color="green";
-  form.appendChild(confirmationMessage);
-
   // Si les données sont valides, soumettre le formulaire
   if (isValid) {
-    //formData.style.display='none'
-   
     
-   
+  
     document.getElementsByClassName("btn-submit")[0].style.display="none";
     var formDataList = document.getElementsByClassName("formData");
     for (var i = 0; i < formDataList.length; i++) {
@@ -189,17 +180,27 @@ if (!location1.checked && !location2.checked && !location3.checked && !location4
     }
     document.getElementsByClassName("modal-body")[0].style.height = "500px";
     btnFermer[0].style.display = "block";
+   
+    //var parent = document.querySelector('#parent-element');
 
+    var parent = document.getElementById('parent-btn');
+   
+    // Ajoutez un gestionnaire d'événement 'click' à l'élément parent
+    parent.addEventListener('click', function(event) {
+      // Vérifiez si l'élément cliqué est un bouton
+      if (event.target && event.target.matches('button')) {
+        // Exécutez du code en réponse à l'événement sur le bouton
+       closeModal();
+       setTimeout(() => {
+        location.reload();
+       }, 2000);   
+      }
+    });
    
 
-    // setTimeout(() => {
-    //   form.submit();
-    // }, 3000);      
+    
   }
 });
-
-
-
 
 // Fonction pour valider l'adresse email
 function isValidEmail(email) {
