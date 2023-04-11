@@ -52,6 +52,7 @@ function closeModal(){
   const termsError = document.querySelector('#terms-error')
   const quantityError = document.querySelector('#quantity-error')
   const locationRadios = document.getElementsByName("location");
+  messageInscription = document.getElementsByClassName("message-inscription")
 
   let isValid = true;
 
@@ -180,6 +181,7 @@ if (!location1.checked && !location2.checked && !location3.checked && !location4
     }
     document.getElementsByClassName("modal-body")[0].style.height = "500px";
     btnFermer[0].style.display = "block";
+    messageInscription[0].style.display = "block";
    
     //var parent = document.querySelector('#parent-element');
 
